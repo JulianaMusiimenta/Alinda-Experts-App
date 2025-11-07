@@ -23,7 +23,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - images/logo1.jpn
-    - images/tool1.jpn
-    - images/tool2.jpn
-    - images/tool3.jpn
+    - assets/images/logo1.png
+    - assets/images/tool1.jpg
+    - assets/images/tool2.jpg
+    - assets/images/tool3.jpg

@@ -70,7 +70,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 width: double.infinity,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFE91E63),
+                  color: const Color.fromARGB(255, 3, 141, 107),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 alignment: Alignment.center,
@@ -94,7 +94,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: const Text(
                       'Skip',
                       style: TextStyle(
-                        color: Color(0xFFE91E63),
+                        color: Color.fromARGB(255, 19, 124, 101),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -106,7 +106,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         controller: _controller,
                         count: 3,
                         effect: const WormEffect(
-                          activeDotColor: Color(0xFFE91E63),
+                          activeDotColor: Color.fromARGB(255, 11, 119, 94),
                           dotColor: Colors.grey,
                           dotHeight: 10,
                           dotWidth: 10,
@@ -117,7 +117,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: const Text(
                           'Next',
                           style: TextStyle(
-                            color: Color(0xFFE91E63),
+                            color: Color.fromARGB(255, 11, 93, 60),
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -149,7 +149,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           style: const TextStyle(
             fontSize: 26,
             fontWeight: FontWeight.bold,
-            color: Color(0xFFE91E63),
+            color: Color.fromARGB(255, 3, 121, 87),
           ),
         ),
         const SizedBox(height: 15),
