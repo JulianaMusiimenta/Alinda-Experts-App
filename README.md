@@ -1,4 +1,4 @@
-# class_work_app
+# alinda_experts_app
 
 A new Flutter project.
 
