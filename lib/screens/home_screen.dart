@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 10),
 
               const Text(
-                'Discover elegant fashion designs, custom suits, and personalized recommendations tailored just for you.',
+                'From expert repairs to personalized service, we provide mechanical solutions designed specifically for your vehicle’s needs',
                 style: TextStyle(fontSize: 16, color: Colors.black87, height: 1.4),
                 textAlign: TextAlign.center,
               ),
