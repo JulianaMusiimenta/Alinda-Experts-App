@@ -2,23 +2,14 @@ import 'package:flutter/material.dart';
 import 'auth/login_screen.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-// Onboarding screen for Alinda Experts
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
-
   @override
-  _OnboardingScreenState createState() => _OnboardingScreenState();
+  OnboardingScreenState createState() => OnboardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _controller = PageController();
   bool isLastPage = false;
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.white, Color(0xFFFFE4F1)],
+            colors: [Colors.white, Color(0xFFFFE4F1)], // white to soft pink
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -34,30 +25,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         padding: const EdgeInsets.all(20),
         child: PageView(
           controller: _controller,
-          onPageChanged: (index) =>
-              setState(() => isLastPage = index == 2),
+          onPageChanged: (index) {
+            setState(() => isLastPage = index == 2);
+          },
           children: [
             buildPage(
-              image: 'images/tool1.jpn',
-              title: 'Welcome to Alinda Experts',
-              description:
-                  'We bring your ideas to life through modern design and innovation.',
+              icon: Icons.home_work, // Example icon
+              title: 'Welcome to Alinda Experts App',
+              description: 'Easily manage your tasks anywhere, anytime.',
             ),
             buildPage(
-              image: 'images/tool2.jpn',
-              title: 'Creative Solutions',
-              description:
-                  'Get inspired with customized, high-quality creative services.',
+              icon: Icons.event_note, // Example icon
+              title: 'Stay Organized',
+              description: 'Track your daily progress with smart reminders.',
             ),
             buildPage(
-              image: 'images/tool3.jpn',
-              title: 'Achieve More',
-              description:
-                  'Work with experts to turn your vision into success.',
+              icon: Icons.flag, // Example icon
+              title: 'Achieve Your Goals',
+              description: 'Turn your plans into action effortlessly.',
             ),
           ],
         ),
       ),
+
       bottomSheet: isLastPage
           ? TextButton(
               onPressed: () {
@@ -70,7 +60,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 width: double.infinity,
                 height: 60,
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 3, 141, 107),
+                  color: const Color.fromARGB(255, 67, 30, 233), // pink button
                   borderRadius: BorderRadius.circular(12),
                 ),
                 alignment: Alignment.center,
@@ -90,23 +80,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // Skip Button
                   TextButton(
                     child: const Text(
                       'Skip',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 19, 124, 101),
+                        color: Color.fromARGB(255, 30, 98, 233),
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     onPressed: () => _controller.jumpToPage(2),
                   ),
+
+                  // Page Indicator + Next Button
                   Row(
                     children: [
                       SmoothPageIndicator(
                         controller: _controller,
                         count: 3,
                         effect: const WormEffect(
-                          activeDotColor: Color.fromARGB(255, 11, 119, 94),
+                          activeDotColor: Color.fromARGB(255, 30, 44, 233),
                           dotColor: Colors.grey,
                           dotHeight: 10,
                           dotWidth: 10,
@@ -117,7 +110,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: const Text(
                           'Next',
                           style: TextStyle(
-                            color: Color.fromARGB(255, 11, 93, 60),
+                            color: Color.fromARGB(255, 44, 30, 233),
                             fontWeight: FontWeight.w600,
                           ),
                         ),
@@ -135,21 +128,25 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   }
 
   Widget buildPage({
-    required String image,
+    required IconData icon,
     required String title,
     required String description,
   }) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(image, height: 300),
+        Icon(
+          icon,
+          size: 120,
+          color: const Color.fromARGB(255, 67, 30, 233),
+        ),
         const SizedBox(height: 40),
         Text(
           title,
           style: const TextStyle(
             fontSize: 26,
             fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 3, 121, 87),
+            color: Color.fromARGB(255, 67, 30, 233),
           ),
         ),
         const SizedBox(height: 15),

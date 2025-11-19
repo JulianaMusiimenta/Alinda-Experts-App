@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text("Logging in..."),
-          backgroundColor: Color(0xFFE91E63), // Pink
+          backgroundColor: Color.fromARGB(255, 6, 18, 191), // Pink
         ),
       );
 
@@ -60,16 +60,16 @@ class _LoginScreenState extends State<LoginScreen> {
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFFE91E63), // Pink
+                      color: Color.fromARGB(255, 30, 64, 233), // Pink
                     ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    "Login to continue your fashion journey.",
+                    "Login to continue your experts journey.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.black54,
+                      color: Color.fromARGB(137, 21, 35, 219),
                     ),
                   ),
                   const SizedBox(height: 35),
@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: _emailController,
                     decoration: InputDecoration(
                       labelText: "Email",
-                      prefixIcon: const Icon(Icons.email, color: Color(0xFFE91E63)),
+                      prefixIcon: const Icon(Icons.email, color: Color.fromARGB(255, 36, 7, 205)),
                       filled: true,
                       fillColor: const Color(0xFFFFF0F5), // soft pink background
                       border: OutlineInputBorder(
@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     obscureText: true,
                     decoration: InputDecoration(
                       labelText: "Password",
-                      prefixIcon: const Icon(Icons.lock, color: Color(0xFFE91E63)),
+                      prefixIcon: const Icon(Icons.lock, color: Color.fromARGB(255, 13, 31, 189)),
                       filled: true,
                       fillColor: const Color(0xFFFFF0F5),
                       border: OutlineInputBorder(
@@ -125,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       },
                       child: const Text(
                         "Forgot Password?",
-                        style: TextStyle(color: Color(0xFFE91E63)),
+                        style: TextStyle(color: Color.fromARGB(255, 40, 30, 233)),
                       ),
                     ),
                   ),
@@ -135,7 +135,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ElevatedButton(
                     onPressed: _login,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFE91E63),
+                      backgroundColor: const Color.fromARGB(255, 71, 30, 233),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
@@ -165,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: const Text(
                           "Sign Up",
                           style: TextStyle(
-                            color: Color(0xFFE91E63),
+                            color: Color.fromARGB(255, 30, 30, 233),
                             fontWeight: FontWeight.bold,
                           ),
                         ),

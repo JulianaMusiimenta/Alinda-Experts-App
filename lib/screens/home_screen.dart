@@ -9,10 +9,10 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text(
-          'TEBAC Designers',
+          'Alinda Experts',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: Color(0xFFE91E63), // pink 
+        backgroundColor: Color.fromRGBO(77, 30, 233, 1), // pink 
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -28,9 +28,9 @@ class HomeScreen extends StatelessWidget {
                 width: 120,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: Color(0xFFE91E63), width: 3),
+                  border: Border.all(color: Color.fromRGBO(67, 30, 233, 1), width: 3),
                   image: const DecorationImage(
-                    image: AssetImage('assets/images/logo1.jpeg'),
+                    image: AssetImage('assets/images/logo1.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -38,11 +38,11 @@ class HomeScreen extends StatelessWidget {
 
               // Welcome text
               const Text(
-                'Welcome to TEBAC Designers!',
+                'Alinda Mechanical Experts!',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFFE91E63),
+                  color: Color.fromARGB(255, 74, 30, 233),
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -88,8 +88,8 @@ class HomeScreen extends StatelessWidget {
 
               // Footer text
               const Text(
-                'Designed with ❤️ by TEBAC Designers',
-                style: TextStyle(color: Colors.grey, fontSize: 14),
+                'Designed with ❤️ by Alinda Experts',
+                style: TextStyle(color: Color.fromARGB(255, 89, 94, 233), fontSize: 14),
               ),
             ],
           ),
@@ -111,7 +111,7 @@ class HomeScreen extends StatelessWidget {
           style: const TextStyle(color: Colors.white, fontSize: 16),
         ),
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFFE91E63),
+          backgroundColor: const Color.fromARGB(5, 24, 17, 239),
           padding: const EdgeInsets.symmetric(vertical: 15),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           elevation: 2,
@@ -120,4 +120,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-

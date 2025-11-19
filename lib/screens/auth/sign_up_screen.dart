@@ -27,7 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       backgroundColor: Colors.deepPurple[50],
       appBar: AppBar(
         title: const Text("Sign Up"),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: const Color.fromARGB(255, 38, 14, 193),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -61,7 +61,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ElevatedButton(
                 onPressed: _signUp,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.deepPurple,
+                  backgroundColor: const Color.fromARGB(255, 40, 14, 209),
                   padding: const EdgeInsets.symmetric(vertical: 15),
                 ),
                 child: const Text("Sign Up",
