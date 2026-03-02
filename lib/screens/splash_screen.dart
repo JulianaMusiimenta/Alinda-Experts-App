@@ -1,13 +1,16 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import '../constants/app_images.dart';
 import 'onboarding_screen.dart';
 
-class splashScreen extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
-  SplashScreenState createState() => SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class SplashScreenState extends State<splashScreen>
+class _SplashScreenState extends State<SplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _fadeAnimation;
@@ -16,7 +19,6 @@ class SplashScreenState extends State<splashScreen>
   void initState() {
     super.initState();
 
-    // Fade-in animation
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -24,13 +26,14 @@ class SplashScreenState extends State<splashScreen>
 
     _fadeAnimation =
         CurvedAnimation(parent: _controller, curve: Curves.easeInOut);
+
     _controller.forward();
 
-    // Move to Onboarding after 3 seconds
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => OnboardingScreen()),
+        MaterialPageRoute(
+            builder: (_) => const OnboardingScreen()),
       );
     });
   }
@@ -44,6 +47,12 @@ class SplashScreenState extends State<splashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Alinda Experts"),
+        backgroundColor: const Color(0xFF431EE9),
+        centerTitle: true,
+      ),
+
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -58,42 +67,22 @@ class SplashScreenState extends State<splashScreen>
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // 🔥 NEW ICON (replaces broken image)
-                Container(
-                  height: 110,
-                  width: 110,
-                  decoration: BoxDecoration(
-                    color: Colors.deepPurple.shade50,
-                    shape: BoxShape.circle,
-                    border: Border.all(
-                      color: const Color.fromARGB(255, 61, 30, 233),
-                      width: 3,
-                    ),
-                  ),
-                  child: const Icon(
-                    Icons.engineering,
-                    size: 60,
-                    color: Color.fromARGB(255, 61, 30, 233),
-                  ),
+                Image.asset(
+                  AppImages.logo,
+                  width: 150,
                 ),
-
                 const SizedBox(height: 20),
-
                 const Text(
                   "Alinda Experts",
                   style: TextStyle(
-                    color: Color.fromARGB(255, 43, 49, 227),
                     fontSize: 26,
                     fontWeight: FontWeight.bold,
-                    letterSpacing: 1.3,
+                    color: Color(0xFF431EE9),
                   ),
                 ),
-
-                const SizedBox(height: 40),
-
+                const SizedBox(height: 30),
                 const CircularProgressIndicator(
-                  color: Color.fromARGB(255, 61, 30, 233),
-                  strokeWidth: 3,
+                  color: Color(0xFF431EE9),
                 ),
               ],
             ),
